@@ -43,12 +43,12 @@ public class WebTablePgStepDefinitions
        wTablePg.ClickSubmitButton();
     }
 
-    [Then(@"the entry will be displayed on the list")]
-    public void ThenTheEntryWillBeDisplayedOnTheList()
-    {
-        var entryNameIsDisplayed = wTablePg.CaptureBenText();
-        Assert.True(entryNameIsDisplayed);
-    }
+        [Then(@"the entry will be displayed on the list")]
+        public void ThenTheEntryWillBeDisplayedOnTheList()
+        {
+            var entryNameIsDisplayed = wTablePg.CaptureBenText();
+            Assert.That(entryNameIsDisplayed, Is.EqualTo(true));
+        }
 
     [When(@"I complete the Registration form with a new set of data")]
     public void WhenICompleteTheRegistrationFormWithANewSetOfData(Table table)
@@ -70,12 +70,12 @@ public class WebTablePgStepDefinitions
         wTablePg.EditSecondEntryName(value);
     }
 
-    [Then(@"the newly edited data '(.*)' will be displayed on the list")]
-    public void ThenTheNewlyEditedDataWillBeDisplayedOnTheList(string value)
-    {
-        var newlyEditedText = wTablePg.EditedLastnameFieldIsDisplayed(value);
-        Assert.True(newlyEditedText == value);
-    }
+        [Then(@"the newly edited data '(.*)' will be displayed on the list")]
+        public void ThenTheNewlyEditedDataWillBeDisplayedOnTheList(string value)
+        {
+            var newlyEditedText = wTablePg.EditedLastnameFieldIsDisplayed(value);
+            Assert.That(newlyEditedText == value);
+        }
 
     [When(@"I complete the Registration form with new data")]
     public void WhenICompleteTheRegistrationFormWithNewData(Table table)
@@ -95,5 +95,12 @@ public class WebTablePgStepDefinitions
     public void ThenTheEntryWillBeNoLongerBeAvailableOnTheList()
     {
         Assert.False(wTablePg.DeletedEntryIsNotDisplayed());
+    }
+}
+        [Then(@"the entry will be no longer be available on the list")]
+        public void ThenTheEntryWillBeNoLongerBeAvailableOnTheList()
+        {
+            Assert.That(wTablePg.DeletedEntryIsNotDisplayed(), Is.EqualTo(true));
+        }
     }
 }

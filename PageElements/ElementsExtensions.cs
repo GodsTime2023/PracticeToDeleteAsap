@@ -4,6 +4,15 @@ public static class ElementsExtensions
 {
     public static IWebElement S_E_By(this IWebDriver driver, By by) =>
         driver.FindElement(by);
+using OpenQA.Selenium.Interactions;
+using System.Collections.ObjectModel;
+
+namespace PracticeToDeleteAsap.PageElements
+{
+    public static class ElementsExtensions
+    {
+        public static IWebElement S_E_By(this IWebDriver driver, By by) =>
+            driver.FindElement(by);
 
     public static IList<IWebElement> S_Es_By(this IWebDriver driver, By by) =>
         driver.FindElements(by);
@@ -54,4 +63,14 @@ public static class ElementsExtensions
         => (IWebElement)((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].click();", element);
 
     public static string AddRandomDigit(this string text) => text + new Random().Next(1, 999).ToString();
+}
+        public static string AddRandomDigit(this string text) => text + new Random().Next(1, 999).ToString();
+
+        public static void S_E_ClickDropDownByActionsMethod(this IWebElement element, IWebDriver driver)
+        {
+            Actions action = new Actions(driver);
+            action.MoveToElement(element).Perform();
+            action.Click(element).Perform();
+        }
+    }
 }

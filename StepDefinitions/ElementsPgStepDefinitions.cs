@@ -11,6 +11,12 @@ public class ElementsPgStepDefinitions
         elementsPg = new DqaElementsPg(driver);
     }
 
+        [Then(@"I will arrive on the Elements page")]
+        public void ThenIWillArriveOnTheElementsPage()
+        {
+            var validateHeaderText = elementsPg.ElementsIsDisplayed();
+            Assert.That(validateHeaderText, Is.EqualTo(true));
+        }
     [Then(@"I will arrive on the Elements page")]
     public void ThenIWillArriveOnTheElementsPage()
     {
