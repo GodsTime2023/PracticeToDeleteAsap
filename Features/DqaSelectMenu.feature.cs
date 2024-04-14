@@ -76,10 +76,12 @@ namespace PracticeToDeleteAsap.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Demoqa Select Menu")]
         [NUnit.Framework.CategoryAttribute("Demoqa")]
+        [NUnit.Framework.CategoryAttribute("Dropdown")]
         public void DemoqaSelectMenu()
         {
             string[] tagsOfScenario = new string[] {
-                    "Demoqa"};
+                    "Demoqa",
+                    "Dropdown"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demoqa Select Menu", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7

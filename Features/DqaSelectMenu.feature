@@ -3,7 +3,7 @@
 As a user
 I want to select option from DemoQa dropdown lists
 
-@Demoqa
+@Demoqa @Dropdown
 Scenario: Demoqa Select Menu
 	Then I verify that home page is displayed successfully
 When I click Widgets menu

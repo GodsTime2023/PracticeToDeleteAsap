@@ -17,12 +17,6 @@ public class DqaSelectMenuSteps
       Assert.That(selectMenuPg.ElementsIsDisplayed(), Is.EqualTo(true));
     }
 
-    [When(@"I click Widgets menu")]
-    public void WhenIClickWidgetsMenu()
-    {
-        selectMenuPg.ClickWidgets();
-    }
-
     [When(@"I validate the page is displayed")]
     public void WhenIValidateThePageIsDisplayed()
     {
@@ -30,6 +24,7 @@ public class DqaSelectMenuSteps
     }
 
     [When(@"I click on select menu")]
+    [Scope(Tag = "@Dropdown")]
     public void WhenIClickOnSelectMenu()
     {
         selectMenuPg.ClickSelectMenu();
