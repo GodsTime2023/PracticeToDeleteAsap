@@ -26,7 +26,7 @@ namespace PracticeToDeleteAsap.Features
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private static string[] featureTags = ((string[])(null));
         
 #line 1 "TextBoxTest.feature"
 #line hidden
@@ -35,7 +35,7 @@ namespace PracticeToDeleteAsap.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "TextBoxTest", "As a user , i want to complete textbox form", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "TextBoxTest", "As a user , i want to complete textbox form", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,28 +47,28 @@ namespace PracticeToDeleteAsap.Features
         }
         
         [NUnit.Framework.SetUpAttribute()]
-        public virtual void TestInitialize()
+        public void TestInitialize()
         {
         }
         
         [NUnit.Framework.TearDownAttribute()]
-        public virtual void TestTearDown()
+        public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
-        public virtual void ScenarioStart()
+        public void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public virtual void ScenarioCleanup()
+        public void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -77,7 +77,7 @@ namespace PracticeToDeleteAsap.Features
         [NUnit.Framework.DescriptionAttribute("TextBox test")]
         [NUnit.Framework.CategoryAttribute("Demoqa")]
         [NUnit.Framework.TestCaseAttribute("Anselme", "test01@test.com", "Glasgow road", "Glasgow road", null)]
-        public virtual void TextBoxTest(string fullname, string email, string currentaddress, string permanentaddress, string[] exampleTags)
+        public void TextBoxTest(string fullname, string email, string currentaddress, string permanentaddress, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Demoqa"};
@@ -91,21 +91,11 @@ namespace PracticeToDeleteAsap.Features
             argumentsOfScenario.Add("email", email);
             argumentsOfScenario.Add("currentaddress", currentaddress);
             argumentsOfScenario.Add("permanentaddress", permanentaddress);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TextBox test", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TextBox test", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -139,18 +129,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 15
   testRunner.And("I click on Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "fullname",
                             "email",
                             "currentaddress",
                             "permanentaddress"});
-                table10.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             string.Format("{0}", fullname),
                             string.Format("{0}", email),
                             string.Format("{0}", currentaddress),
                             string.Format("{0}", permanentaddress)});
 #line 16
- testRunner.Then("all the details entered should be displayed", ((string)(null)), table10, "Then ");
+ testRunner.Then("all the details entered should be displayed", ((string)(null)), table11, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

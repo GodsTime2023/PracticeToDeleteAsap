@@ -4,15 +4,6 @@ public static class ElementsExtensions
 {
     public static IWebElement S_E_By(this IWebDriver driver, By by) =>
         driver.FindElement(by);
-using OpenQA.Selenium.Interactions;
-using System.Collections.ObjectModel;
-
-namespace PracticeToDeleteAsap.PageElements
-{
-    public static class ElementsExtensions
-    {
-        public static IWebElement S_E_By(this IWebDriver driver, By by) =>
-            driver.FindElement(by);
 
     public static IList<IWebElement> S_Es_By(this IWebDriver driver, By by) =>
         driver.FindElements(by);
@@ -25,7 +16,7 @@ namespace PracticeToDeleteAsap.PageElements
 
     public static string S_E_GetText(this IWebElement element)
         => element.Text;
-    
+
     public static bool S_E_Displayed(this IWebElement element)
         => element.Displayed;
 
@@ -35,7 +26,7 @@ namespace PracticeToDeleteAsap.PageElements
     public static IReadOnlyCollection<string> S_E_GetAllText(this IList<IWebElement> elements)
     {
         List<string> datas = new List<string>();
-        foreach (var element in elements) 
+        foreach (var element in elements)
         { datas.Add(element.Text); }
         return datas;
     }
@@ -47,7 +38,7 @@ namespace PracticeToDeleteAsap.PageElements
         return datas;
     }
 
-    public static void S_E_SelectByTextFromDropDown(this IWebElement element, string text) 
+    public static void S_E_SelectByTextFromDropDown(this IWebElement element, string text)
         => new SelectElement(element).SelectByText(text);
 
     public static void S_E_SelectByValueFromDropDown(this IWebElement element, string text)
@@ -63,14 +54,11 @@ namespace PracticeToDeleteAsap.PageElements
         => (IWebElement)((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].click();", element);
 
     public static string AddRandomDigit(this string text) => text + new Random().Next(1, 999).ToString();
-}
-        public static string AddRandomDigit(this string text) => text + new Random().Next(1, 999).ToString();
 
-        public static void S_E_ClickDropDownByActionsMethod(this IWebElement element, IWebDriver driver)
-        {
-            Actions action = new Actions(driver);
-            action.MoveToElement(element).Perform();
-            action.Click(element).Perform();
-        }
+    public static void S_E_ClickDropDownByActionsMethod(this IWebElement element, IWebDriver driver)
+    {
+        Actions action = new Actions(driver);
+        action.MoveToElement(element).Perform();
+        action.Click(element).Perform();
     }
 }

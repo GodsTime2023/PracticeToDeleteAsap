@@ -18,8 +18,4 @@ public class DqaElementsPg
     
     public void ClickWebTablesTab() => webTablesTab.S_E_Click();
     public void ClickTextBoxTab() => TextBoxTab.S_E_Click();
-        public bool ElementsIsDisplayed() => waitMethod.WaitForElementDisplayed(elementsHeaderTest).S_E_Displayed();
-        public void ClickWebTablesTab() => webTablesTab.S_E_Click();
-  
-    }
 }

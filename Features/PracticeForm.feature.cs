@@ -26,7 +26,7 @@ namespace PracticeToDeleteAsap.Features
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private static string[] featureTags = ((string[])(null));
         
 #line 1 "PracticeForm.feature"
 #line hidden
@@ -35,7 +35,7 @@ namespace PracticeToDeleteAsap.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "PracticeForm", "As A User I want to be able to complete the \'Practice Form\'", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "PracticeForm", "As A User I want to be able to complete the \'Practice Form\'", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -47,28 +47,28 @@ namespace PracticeToDeleteAsap.Features
         }
         
         [NUnit.Framework.SetUpAttribute()]
-        public virtual void TestInitialize()
+        public void TestInitialize()
         {
         }
         
         [NUnit.Framework.TearDownAttribute()]
-        public virtual void TestTearDown()
+        public void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
-        public virtual void ScenarioStart()
+        public void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public virtual void ScenarioCleanup()
+        public void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -77,27 +77,17 @@ namespace PracticeToDeleteAsap.Features
         [NUnit.Framework.DescriptionAttribute("Demoqa Practice Form test")]
         [NUnit.Framework.CategoryAttribute("Demoqa")]
         [NUnit.Framework.CategoryAttribute("Forms")]
-        public virtual void DemoqaPracticeFormTest()
+        public void DemoqaPracticeFormTest()
         {
             string[] tagsOfScenario = new string[] {
                     "Demoqa",
                     "Forms"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demoqa Practice Form test", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demoqa Practice Form test", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
                 testRunner.SkipScenario();
             }
@@ -115,38 +105,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 10
  testRunner.Then("I verify that Student Registration Form is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                            "FirstName",
-                            "LastName",
-                            "Email",
-                            "PhoneNumber",
-                            "DateOfBirth",
-                            "File",
-                            "CurrentAddress",
-                            "State",
-                            "City"});
-                table8.AddRow(new string[] {
-                            "Racheal",
-                            "Stones",
-                            "rachealstones@test.com",
-                            "0094446667",
-                            "15 May,1990",
-                            "Text.txt",
-                            "56 Dunduck Avenue",
-                            "Haryana",
-                            "Panipat"});
-#line 11
- testRunner.When("I have filled out the Registration form with the following data", ((string)(null)), table8, "When ");
-#line hidden
-#line 14
-  testRunner.And("I click Gender Option \'Female\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 15
-  testRunner.And("I click on submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 16
- testRunner.Then("all the details entered should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
@@ -168,8 +126,40 @@ this.ScenarioInitialize(scenarioInfo);
                             "56 Dunduck Avenue",
                             "Haryana",
                             "Panipat"});
+#line 11
+ testRunner.When("I have filled out the Registration form with the following data", ((string)(null)), table9, "When ");
+#line hidden
+#line 14
+  testRunner.And("I click Gender Option \'Female\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+  testRunner.And("I click on submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+ testRunner.Then("all the details entered should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "Email",
+                            "PhoneNumber",
+                            "DateOfBirth",
+                            "File",
+                            "CurrentAddress",
+                            "State",
+                            "City"});
+                table10.AddRow(new string[] {
+                            "Racheal",
+                            "Stones",
+                            "rachealstones@test.com",
+                            "0094446667",
+                            "15 May,1990",
+                            "Text.txt",
+                            "56 Dunduck Avenue",
+                            "Haryana",
+                            "Panipat"});
 #line 17
- testRunner.Then("the data should be successfully submitted and retrieved", ((string)(null)), table9, "Then ");
+ testRunner.Then("the data should be successfully submitted and retrieved", ((string)(null)), table10, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

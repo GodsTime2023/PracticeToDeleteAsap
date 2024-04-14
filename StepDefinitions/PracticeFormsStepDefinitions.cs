@@ -50,7 +50,7 @@ public class PracticeFormsStepDefinitions
     public void ThenAllTheDetailsEnteredShouldBeDisplayedAndValidated()
     {
         var result = practiceFormsPage.IsAllDataDisplayed();
-        Assert.True(result);
+        Assert.That(result, Is.EqualTo(true));
     }
 
     [Then(@"the data should be successfully submitted and retrieved")]
@@ -59,15 +59,15 @@ public class PracticeFormsStepDefinitions
         string phone = practiceFormsPage.retrieveOutPutDatas(6);
         Assert.Multiple(() =>
         {
-            Assert.AreEqual(table.Rows[0]["FirstName"], practiceFormsPage.retrieveOutPutDatas(2).Split(" ")[0]);
-            Assert.AreEqual(table.Rows[0]["LastName"], practiceFormsPage.retrieveOutPutDatas(2).Split(" ")[1]);
-            Assert.AreEqual(table.Rows[0]["Email"], practiceFormsPage.retrieveOutPutDatas(4));
-            Assert.AreEqual(table.Rows[0]["PhoneNumber"], practiceFormsPage.retrieveOutPutDatas(8));
-            Assert.AreEqual(table.Rows[0]["DateOfBirth"], practiceFormsPage.retrieveOutPutDatas(10));
-            Assert.AreEqual(table.Rows[0]["File"], practiceFormsPage.retrieveOutPutDatas(16));
-            Assert.AreEqual(table.Rows[0]["CurrentAddress"], practiceFormsPage.retrieveOutPutDatas(18));
-            Assert.AreEqual(table.Rows[0]["State"], practiceFormsPage.retrieveOutPutDatas(20).Split(" ")[0]);
-            Assert.AreEqual(table.Rows[0]["City"], practiceFormsPage.retrieveOutPutDatas(20).Split(" ")[1]);
+            Assert.That(table.Rows[0]["FirstName"] == practiceFormsPage.retrieveOutPutDatas(2).Split(" ")[0]);
+            Assert.That(table.Rows[0]["LastName"] == practiceFormsPage.retrieveOutPutDatas(2).Split(" ")[1]);
+            Assert.That(table.Rows[0]["Email"] == practiceFormsPage.retrieveOutPutDatas(4));
+            Assert.That(table.Rows[0]["PhoneNumber"] == practiceFormsPage.retrieveOutPutDatas(8));
+            Assert.That(table.Rows[0]["DateOfBirth"] == practiceFormsPage.retrieveOutPutDatas(10));
+            Assert.That(table.Rows[0]["File"] == practiceFormsPage.retrieveOutPutDatas(16));
+            Assert.That(table.Rows[0]["CurrentAddress"] == practiceFormsPage.retrieveOutPutDatas(18));
+            Assert.That(table.Rows[0]["State"] == practiceFormsPage.retrieveOutPutDatas(20).Split(" ")[0]);
+            Assert.That(table.Rows[0]["City"] == practiceFormsPage.retrieveOutPutDatas(20).Split(" ")[1]);
         }); 
     }
 }

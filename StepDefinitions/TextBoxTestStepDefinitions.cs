@@ -46,9 +46,9 @@ public class TextBoxTestStepDefinitions
     public void ThenAllTheDetailsEnteredShouldBeDisplayed(Table table)
     {
         var outputValues = textBoxPage?.GetOutputValues();
-        Assert.AreEqual(table.Rows[0]["fullname"], outputValues?[0].Text.Split(":")[1]);
-        Assert.AreEqual(table.Rows[0]["email"], outputValues?[1].Text.Split(":")[1]);
-        Assert.AreEqual(table.Rows[0]["currentaddress"], outputValues?[2].Text.Split(":")[1]);
-        Assert.AreEqual(table.Rows[0]["permanentaddress"], outputValues?[3].Text.Split(":")[1]);
+        Assert.That(table.Rows[0]["fullname"] == outputValues?[0].Text.Split(":")[1]);
+        Assert.That(table.Rows[0]["email"] == outputValues?[1].Text.Split(":")[1]);
+        Assert.That(table.Rows[0]["currentaddress"] == outputValues?[2].Text.Split(":")[1]);
+        Assert.That(table.Rows[0]["permanentaddress"] == outputValues?[3].Text.Split(":")[1]);
     }
 }

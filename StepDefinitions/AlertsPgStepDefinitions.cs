@@ -14,7 +14,7 @@ public class AlertsPgStepDefinitions
     [Then(@"I land on the Alerts page")]
     public void ThenILandOnTheAlertsPage()
     {
-        Assert.True(alertsPg.AlertstabDisplayed());
+        Assert.That(alertsPg.AlertstabDisplayed(), Is.EqualTo(true));
     }
 
     [When(@"I click on second Click me button")]
@@ -45,6 +45,6 @@ public class AlertsPgStepDefinitions
     public void ThenTheNameAppearedInGreenColourShouldValidated(string expectedValue)
     {
        string actualValue = alertsPg.GetAlertValueDisplayed();
-        Assert.AreEqual(expectedValue, actualValue);
+        Assert.That(expectedValue == actualValue);
     }
 }

@@ -11,4 +11,4 @@ global using NUnit.Framework;
 global using PracticeToDeleteAsap.PageObjects;
 global using PracticeToDeleteAsap.PageElements;
 global using SeleniumExtras.WaitHelpers;
-global using PracticeToDeleteAsap.PageElements;
+global using OpenQA.Selenium.Interactions;

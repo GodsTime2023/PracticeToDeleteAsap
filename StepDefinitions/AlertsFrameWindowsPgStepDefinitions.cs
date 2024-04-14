@@ -15,7 +15,7 @@ public class AlertsFrameWindowsPgStepDefinitions
     public void ThenILandOnTheAlertsFrameAndWindowsPage()
     {
         var validateHeaderText2 = alertsFrameWindowsPg.AlertsFrameWindowsTitleIsDisplayed();
-        Assert.True(validateHeaderText2);
+        Assert.That(validateHeaderText2, Is.EqualTo(true));
     }
 
     [When(@"I click on the Alerts tab")]

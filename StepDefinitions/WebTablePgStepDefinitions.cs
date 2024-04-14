@@ -10,10 +10,11 @@ public class WebTablePgStepDefinitions
         driver = container.Resolve<IWebDriver>();
         wTablePg = new DqaWebTablePg(driver);
     }
+
     [Then(@"I will arrive on the Web Tables page")]
     public void ThenIWillArriveOnTheWebTablesPage()
     {
-        Assert.True(wTablePg.WebTableDisplayed());
+        Assert.That(wTablePg.WebTableDisplayed(), Is.EqualTo(true));
     }
 
     [When(@"I click on the Add button")]
@@ -43,12 +44,12 @@ public class WebTablePgStepDefinitions
        wTablePg.ClickSubmitButton();
     }
 
-        [Then(@"the entry will be displayed on the list")]
-        public void ThenTheEntryWillBeDisplayedOnTheList()
-        {
-            var entryNameIsDisplayed = wTablePg.CaptureBenText();
-            Assert.That(entryNameIsDisplayed, Is.EqualTo(true));
-        }
+    [Then(@"the entry will be displayed on the list")]
+    public void ThenTheEntryWillBeDisplayedOnTheList()
+    {
+        var entryNameIsDisplayed = wTablePg.CaptureBenText();
+        Assert.That(entryNameIsDisplayed, Is.EqualTo(true));
+    }
 
     [When(@"I complete the Registration form with a new set of data")]
     public void WhenICompleteTheRegistrationFormWithANewSetOfData(Table table)
@@ -70,12 +71,12 @@ public class WebTablePgStepDefinitions
         wTablePg.EditSecondEntryName(value);
     }
 
-        [Then(@"the newly edited data '(.*)' will be displayed on the list")]
-        public void ThenTheNewlyEditedDataWillBeDisplayedOnTheList(string value)
-        {
-            var newlyEditedText = wTablePg.EditedLastnameFieldIsDisplayed(value);
-            Assert.That(newlyEditedText == value);
-        }
+    [Then(@"the newly edited data '(.*)' will be displayed on the list")]
+    public void ThenTheNewlyEditedDataWillBeDisplayedOnTheList(string value)
+    {
+        var newlyEditedText = wTablePg.EditedLastnameFieldIsDisplayed(value);
+        Assert.That(newlyEditedText == value);
+    }
 
     [When(@"I complete the Registration form with new data")]
     public void WhenICompleteTheRegistrationFormWithNewData(Table table)
@@ -94,13 +95,6 @@ public class WebTablePgStepDefinitions
     [Then(@"the entry will be no longer be available on the list")]
     public void ThenTheEntryWillBeNoLongerBeAvailableOnTheList()
     {
-        Assert.False(wTablePg.DeletedEntryIsNotDisplayed());
-    }
-}
-        [Then(@"the entry will be no longer be available on the list")]
-        public void ThenTheEntryWillBeNoLongerBeAvailableOnTheList()
-        {
-            Assert.That(wTablePg.DeletedEntryIsNotDisplayed(), Is.EqualTo(true));
-        }
+        Assert.That(wTablePg.DeletedEntryIsNotDisplayed(), Is.EqualTo(false));
     }
 }

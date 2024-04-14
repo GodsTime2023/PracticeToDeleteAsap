@@ -116,18 +116,18 @@ testRunner.When("I click Widgets menu", ((string)(null)), ((TechTalk.SpecFlow.Ta
 #line 15
     testRunner.And("I click on dropdown to Select Multi Colour", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Cars"});
-                table1.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "volvo"});
-                table1.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Opel"});
-                table1.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "audi"});
-                table1.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Saab"});
 #line 16
-    testRunner.And("I click on dropdown to select multi standard", ((string)(null)), table1, "And ");
+    testRunner.And("I click on dropdown to select multi standard", ((string)(null)), table8, "And ");
 #line hidden
 #line 22
 testRunner.Then("the selected menus should be validated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
