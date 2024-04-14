@@ -26,12 +26,6 @@ public class DqaSelectMenuPg
   
     public bool ElementsIsDisplayed() => waitMethod.WaitForElementDisplayed(widgets).S_E_Displayed();
 
-    public void ClickWidgets()
-    {
-        driver.UseIJavaScroll(widgets);
-        widgets.S_E_Click();
-    }
-
     public bool PageIsDisplayed() => waitMethod.WaitForElementDisplayed(selectMenu).S_E_Displayed();
 
     public void ClickSelectMenu()
