@@ -22,5 +22,6 @@ public class DqaAlertsFrameWindowsPg
     {
         waitMethod.WaitForAlertsFrameWindowsTitleDisplayed(Alertstab);
         Alertstab.S_E_ClickByJs(driver);
+
     }
 }
