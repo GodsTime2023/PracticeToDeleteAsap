@@ -75,15 +75,13 @@ namespace PracticeToDeleteAsap.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Click on the Alerts tab")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("Demoqa")]
         [NUnit.Framework.CategoryAttribute("Alerts")]
         public void ClickOnTheAlertsTab()
         {
             string[] tagsOfScenario = new string[] {
                     "Demoqa",
-                    "Alerts",
-                    "ignore"};
+                    "Alerts"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click on the Alerts tab", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
@@ -118,10 +116,7 @@ testRunner.When("I click on Alerts, Frame & Windows menu", ((string)(null)), ((T
     testRunner.Then("I validate the displayed alert message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 14
-    testRunner.When("click on fourth Click me button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 15
-    testRunner.And("I enter text in the text field displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.When("click on fourth Click me button and enter \'text\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
 testRunner.Then("the name appeared in green colour as \'You entered text\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -29,10 +29,11 @@ public class AlertsPgStepDefinitions
         alertsPg.IsAlertMessageDisplayed();
     }
 
-    [When(@"click on fourth Click me button")]
-    public void WhenClickOnFourthClickMeButton()
+    [When(@"click on fourth Click me button and enter '(.*)'")]
+    public void WhenClickOnFourthClickMeButton(string text)
     {
        alertsPg.ClickAlertBtn2();
+        WhenIEnterNameInTheTextFieldDisplayed(text);
     }
 
     [When(@"I enter (.*) in the text field displayed")]

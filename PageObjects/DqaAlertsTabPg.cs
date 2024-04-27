@@ -23,6 +23,8 @@ public class DqaAlertsTabPg
     {
         driver.UseIJavaScroll(Clickme);
         Clickme.S_E_ClickByJs(driver);
+        waitMethod.WaitForAlertToBeDisplayed();
+        IAlert alert = driver.SwitchTo().Alert();
     }
 
     public void ClickAlertBtn() => AlertsBtn.S_E_Click();
