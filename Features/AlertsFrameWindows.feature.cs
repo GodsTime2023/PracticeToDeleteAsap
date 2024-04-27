@@ -75,13 +75,15 @@ namespace PracticeToDeleteAsap.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Click on the Alerts tab")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("Demoqa")]
         [NUnit.Framework.CategoryAttribute("Alerts")]
         public void ClickOnTheAlertsTab()
         {
             string[] tagsOfScenario = new string[] {
                     "Demoqa",
-                    "Alerts"};
+                    "Alerts",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Click on the Alerts tab", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6

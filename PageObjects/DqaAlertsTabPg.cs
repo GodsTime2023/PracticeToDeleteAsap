@@ -19,7 +19,11 @@ public class DqaAlertsTabPg
 
     public bool AlertstabDisplayed() => Alertstabvisible.S_E_Displayed();
 
-    public void ClickAlertBtn2() => Clickme.S_E_ClickByJs(driver);
+    public void ClickAlertBtn2()
+    {
+        driver.UseIJavaScroll(Clickme);
+        Clickme.S_E_ClickByJs(driver);
+    }
 
     public void ClickAlertBtn() => AlertsBtn.S_E_Click();
 
